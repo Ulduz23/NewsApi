@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "a8bb71cf-750c-4365-b2fe-32d5502f18be",
+		"name": "NEWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18065964",
+		"_collection_link": "https://www.postman.com/grey-station-441108/workspace/news-api/collection/18065964-a8bb71cf-750c-4365-b2fe-32d5502f18be?action=share&source=collection_link&creator=18065964"
+	},
+	"item": [
+		{
+			"name": "Get News Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "az",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/news/all?page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"all"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create News",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "az",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/news/create?az[title]=Title-az&en[title]=Title-en&az[description]=DESC-az&en[description]=DESC-en&status=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"create"
+					],
+					"query": [
+						{
+							"key": "az[title]",
+							"value": "Title-az"
+						},
+						{
+							"key": "en[title]",
+							"value": "Title-en"
+						},
+						{
+							"key": "az[description]",
+							"value": "DESC-az"
+						},
+						{
+							"key": "en[description]",
+							"value": "DESC-en"
+						},
+						{
+							"key": "status",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete News",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "az",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/news/delete/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update News",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "az",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/news/update/1?az[title]=az-title-en&en[title]=en-title-az&az[description]=az-description-en&en[description]=en-description-az&status=0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "az[title]",
+							"value": "az-title-en"
+						},
+						{
+							"key": "en[title]",
+							"value": "en-title-az"
+						},
+						{
+							"key": "az[description]",
+							"value": "az-description-en"
+						},
+						{
+							"key": "en[description]",
+							"value": "en-description-az"
+						},
+						{
+							"key": "status",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "News Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/news/detail/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
