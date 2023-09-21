@@ -20,4 +20,5 @@
     php artisan serve
 ``` 
 
+### You can use the apis.postman_collection file by importing it into Postman
 
