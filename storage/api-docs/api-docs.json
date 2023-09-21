@@ -1,0 +1,80 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "News Api Documentation",
+        "contact": {
+            "email": "nakhiyev.alakhber@gmail.com"
+        },
+        "version": "1"
+    },
+    "paths": {
+        "/api/news/all": {
+            "get": {
+                "tags": [
+                    "NEWS"
+                ],
+                "summary": "Get News",
+                "description": "Get News Details",
+                "operationId": "bde95ad817f2fb55fc5c26254ec6861d",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "example": "5"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of items per page",
+                        "required": false,
+                        "example": "15"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/news": {
+            "post": {
+                "tags": [
+                    "NEWS"
+                ],
+                "summary": "Create News ",
+                "description": "Create News Data",
+                "operationId": "bcca9345851ff5a7a761bd15d7e1f22c",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "OBond Order Date",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
