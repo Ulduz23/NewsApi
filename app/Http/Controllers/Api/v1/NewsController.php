@@ -21,21 +21,28 @@ class NewsController extends Controller
         return $this->sendResponse($newsResource, $newsCount);
     }
 
+    // public function store(NewsStoreRequest $request)
+    // {
+    //     $request = $request->validated();
+    //     try {
+    //         DB::beginTransaction();
+           
+    //         News::create($request);
+           
+    //         DB::commit();
+    //         return $this->sendResponseOperation();
+    //     } catch (\Throwable $th) {
+    //         DB::rollBack();
+    //         throw $th;
+    //     }
+    // }
     public function store(NewsStoreRequest $request)
-    {
-        $request = $request->validated();
-        try {
-            DB::beginTransaction();
-           
-            News::create($request);
-           
-            DB::commit();
-            return $this->sendResponseOperation();
-        } catch (\Throwable $th) {
-            DB::rollBack();
-            throw $th;
-        }
+    {   
+        return (new NewsResource(News::create($request->all())))->additional([
+            'message' => __('lang.created.success')
+        ]);
     }
+
 
     public function show(News $news)
     {
