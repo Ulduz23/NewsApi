@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
-
     public function index()
     {
         $news = News::paginate($this->limit);
@@ -38,7 +37,7 @@ class NewsController extends Controller
     // }
     public function store(NewsStoreRequest $request)
     {   
-        return (new NewsResource(News::create($request->all())))->additional([
+        return (new NewsResource(News::create($request->validated())))->additional([
             'message' => __('lang.created.success')
         ]);
     }
